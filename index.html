@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extract Widget Project</title>
+    <style>
+      #info {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: center;
+      }
+      #extract-widget {
+        min-width: 200px;
+        min-height: 200px;
+        text-align: center;
+        border: 2px solid gray;
+        position: relative;
+        background: #f4eff8;
+      }
+      .ui-resizable-handle {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border: 1px solid #000;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+      .text-center {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="extract-widget"></div>
+    <div id="info">
+      <p>X-coordinate: <span id="x-coordinate">0</span></p>
+      <p>Y-coordinate: <span id="y-coordinate">0</span></p>
+      <p>Width: <span id="width">-</span></p>
+      <p>Height: <span id="height">-</span></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="extract-widget.js"></script>
+  </body>
+</html>
