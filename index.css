@@ -1,0 +1,31 @@
+@import "./css/extract-widget.css";
+
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.ui-resizable-handle {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.text-center {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+[id^="extract-widget"] {
+  min-width: 200px;
+  min-height: 200px;
+  text-align: center;
+  border: 2px solid gray;
+  position: relative;
+  background: #f4eff8;
+}
