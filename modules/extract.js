@@ -1,17 +1,21 @@
 export function createExtractWidget() {
   $.widget("custom.extract", {
+    options: {
+      background: "#6750a4"
+    },
     _create: function () {
       $("<h2>Extract Widget</h2>")
         .insertBefore(this.element)
         .addClass("text-center");
       this._createDraggableResizableBox();
-      this._bindInfoSection();
     },
 
     _createDraggableResizableBox: function () {
       var $draggableBox = $("<div class='inner-box'></div>").appendTo(
         this.element
       );
+
+      $draggableBox.css("background-color", this.options.background);
 
       $draggableBox.draggable({
         containment: this.element,
@@ -24,29 +28,22 @@ export function createExtractWidget() {
       });
     },
 
-    _bindInfoSection: function () {
-      var infoSection = $(".info");
-      this.xCoordinateElement = infoSection.find(".x-coordinate");
-      this.yCoordinateElement = infoSection.find(".y-coordinate");
-      this.widthElement = infoSection.find(".width");
-      this.heightElement = infoSection.find(".height");
-    },
-
     _updateDimensions: function () {
       var $element = this.element.find(".inner-box");
       var width = $element.width();
       var height = $element.height();
 
-      this.widthElement.text(width);
-      this.heightElement.text(height);
+      this._trigger("dimensionsUpdated", null, { width, height });
     },
 
     _updateCoordinates: function () {
       var $element = this.element.find(".inner-box");
       var position = $element.position();
 
-      this.xCoordinateElement.text(position.left);
-      this.yCoordinateElement.text(position.top);
+      this._trigger("coordinatesUpdated", null, {
+        left: position.left,
+        top: position.top
+      });
     },
     _setOption: function (key, value) {
       this._super(key, value);
